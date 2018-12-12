@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :comments
+  # Routes for the Comment resource:
+
+  # READ
+  get("/comments", { :controller => "comments", :action => "index" })
+  get("/comments/:id_to_display", { :controller => "comments", :action => "show" })
+
+  #------------------------------
+
   devise_for :upload_pictures
   # Routes for the Upload picture resource:
 
