@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      Final
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-nav-links" aria-controls="collapsible-nav-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsible-nav-links">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Resources
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/comments" class="dropdown-item">
+              Comments
+            </a>
+            <a href="/upload_pictures" class="dropdown-item">
+              Upload Pictures
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <% if current_comment.blank? %>
+          <li class="nav-item">
+            <a href="/comments/sign_in" class="nav-link">
+              Comment sign in
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/comments/sign_up" class="nav-link">
+              Comment sign up
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/comments/edit" class="nav-link">
+              Comment edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/comments/sign_out" data-method="delete" class="nav-link">
+              Comment sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav">
+        <% if current_upload_picture.blank? %>
+          <li class="nav-item">
+            <a href="/upload_pictures/sign_in" class="nav-link">
+              UploadPicture sign in
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/upload_pictures/sign_up" class="nav-link">
+              UploadPicture sign up
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/upload_pictures/edit" class="nav-link">
+              UploadPicture edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/upload_pictures/sign_out" data-method="delete" class="nav-link">
+              UploadPicture sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div> <!-- .navbar-collapse -->
+  </div> <!-- .container -->
+</nav>
