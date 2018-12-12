@@ -1,6 +1,6 @@
 class UploadPicturesController < ApplicationController
   def index
-    @upload_pictures = UploadPicture.all
+    @upload_pictures = UploadPicture.page(params[:page]).per(10)
 
     render("upload_picture_templates/index.html.erb")
   end
