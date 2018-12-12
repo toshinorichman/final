@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "upload_pictures#index"
   devise_for :comments
   # Routes for the Comment resource:
 
